@@ -7,7 +7,7 @@ import reducers from './reducers';
 const App = () => {
     return (
         <Provider store={createStore(reducers)}>
-            <View><Text>HiTest1</Text></View>
+            <View><Text>HiTest1Test2</Text></View>
         </Provider>
     );
 };
