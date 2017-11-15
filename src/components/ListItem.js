@@ -10,8 +10,13 @@ import { CardSection } from './common';
 import * as actions from '../actions';
 
 class ListItem extends Component {
+    componentWillUpdate() {
+        LayoutAnimation.spring();
+    }
+
     renderDescription() {
         const { library, expanded } = this.props;
+
         if (expanded) {
             return  (
                 <CardSection>
@@ -54,7 +59,6 @@ const styles = {
 const mapStateToProps = (state, ownProps) => {
     const expanded = state.selectedLibraryId === ownProps.library.id;
     return { expanded };
-    
 };
 
 export default connect(mapStateToProps, actions)(ListItem);
